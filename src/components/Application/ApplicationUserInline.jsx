@@ -76,7 +76,7 @@ const ApplicationUserInline = () => {
             </div>
 
             <ChatElementUser message={chatMessages} handlePhoto={handleShowPhoto} />
-            <ButtonsApplicationUserInline id={id} status={dataArray.status} />
+            <ButtonsApplicationUserInline id={id} status={dataArray.status} dataArray={dataArray}/>
         </div>
     );
 }

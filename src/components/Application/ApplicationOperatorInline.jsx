@@ -74,7 +74,7 @@ const ApplicationOperatorInline = () => {
             </div>
 
             <ChatElementOperator message={chatMessages} handlePhoto={handleShowPhoto} />
-            <ButtonsApplicationOperatorInline id={id} status={dataArray.status} />
+            <ButtonsApplicationOperatorInline id={id} status={dataArray.status} dataArray={dataArray}/>
         </div>
     );
 }
