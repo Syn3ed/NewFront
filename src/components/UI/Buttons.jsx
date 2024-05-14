@@ -105,7 +105,7 @@ export const ButtonsApplicationUserInline = ({ dataArray, id, status }) => {
             },
             body: JSON.stringify(data)
         }).then(response => {
-            tg.close();
+            // tg.close();
         }).catch(error => {
             console.error('Ошибка при отправке запроса:', error);
         });
@@ -123,13 +123,11 @@ export const ButtonsApplicationUserInline = ({ dataArray, id, status }) => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)
-        })
-            .then(response => {
-                tg.close();
-            })
-            .catch(error => {
-                console.error('Ошибка при отправке запроса:', error);
-            });
+        }).then(response => {
+            // tg.close();
+        }).catch(error => {
+            console.error('Ошибка при отправке запроса:', error);
+        });
     }, [dataArray]);
 
     const closeReq = useCallback(() => {
@@ -146,11 +144,10 @@ export const ButtonsApplicationUserInline = ({ dataArray, id, status }) => {
             },
             body: JSON.stringify(data)
         }).then(response => {
-            tg.close();
-        })
-            .catch(error => {
-                console.error('Ошибка при отправке запроса:', error);
-            });
+            // tg.close();
+        }).catch(error => {
+            console.error('Ошибка при отправке запроса:', error);
+        });
     }, [dataArray]);
 
     let buttons = null;
@@ -193,7 +190,7 @@ export const ButtonsApplicationOperatorInline = ({ dataArray, id, status }) => {
             },
             body: JSON.stringify(data)
         }).then(response => {
-            tg.close();
+            // tg.close();
         }).catch(error => {
             console.error('Ошибка при отправке запроса:', error);
         });
@@ -211,13 +208,11 @@ export const ButtonsApplicationOperatorInline = ({ dataArray, id, status }) => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)
-        })
-            .then(response => {
-                tg.close();
-            })
-            .catch(error => {
-                console.error('Ошибка при отправке запроса:', error);
-            });
+        }).then(response => {
+            // tg.close();
+        }).catch(error => {
+            console.error('Ошибка при отправке запроса:', error);
+        });
     }, [dataArray]);
 
     const closeReq = useCallback(() => {
@@ -234,11 +229,10 @@ export const ButtonsApplicationOperatorInline = ({ dataArray, id, status }) => {
             },
             body: JSON.stringify(data)
         }).then(response => {
-            tg.close();
-        })
-            .catch(error => {
-                console.error('Ошибка при отправке запроса:', error);
-            });
+            // tg.close();
+        }).catch(error => {
+            console.error('Ошибка при отправке запроса:', error);
+        });
     }, [dataArray]);
 
     let buttons = null;
@@ -274,7 +268,7 @@ export const ButtonsApplicationOperatorInline = ({ dataArray, id, status }) => {
 
 
 export const ButtonsProfile = ({ filteredArray }) => {
-    
+
     const changeRoleUser = useCallback(() => {
         tg.sendData(`/changeRoleUser ${filteredArray[0]?.telegramId}`);
         // tg.close();
@@ -283,7 +277,7 @@ export const ButtonsProfile = ({ filteredArray }) => {
     const changeRoleOperator = useCallback(() => {
         tg.sendData(`/changeRoleOperator ${filteredArray[0]?.telegramId}`);
         // tg.close();
-    }, [ filteredArray]);
+    }, [filteredArray]);
 
     const changeRoleAdmin = useCallback(() => {
         tg.sendData(`/changeRoleAdmin ${filteredArray[0]?.telegramId}`);
