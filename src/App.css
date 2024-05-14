@@ -1,38 +1,494 @@
-.App {
+.custom-textarea {
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Label-ListApplicationOperator {
+  background: linear-gradient(90.36deg, #47D69D 0%, #47D69D 0.01%, #47D69D 0%);
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+
+}
+
+.labelTabs {
+  /* font-family: Onest; */
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: left;
+  color: #FFFFFF;
+  padding-left: 20px;
+}
+
+.CustomTextInput,
+.CustomTextArea {
+  width: auto;
+  background: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  /* border-top: 1px solid rgba(0, 0, 0, 0.2); */
+  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); */
+  color: #000;
+}
+
+.tab-label {
+  color: #000;
+}
+
+.card-applications {
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+    linear-gradient(180deg, rgba(18, 168, 116, 0.07) 0%, rgba(18, 168, 116, 0) 100%);
+  border-radius: 10px;
+  width: 92%;
+  font-weight: 600;
+  line-height: 24px;
+  font-size: 16px;
+  box-shadow: 0px 8px 16px 0px #00000073;
+
+  /* margin-bottom: 10px; */
+  margin-top: 10px;
+}
+
+.NameUserlabel,
+.NameUserP,
+.Themelabel,
+.ThemeP {
+  margin: 0;
+}
+
+.NameUserlabel,
+.Themelabel {
+  color: #637175;
+}
+
+.labelCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.StatusCapsule,
+.StatusCapsule-1,
+.StatusCapsule-2,
+.StatusCapsule-3 {
+  border-radius: 15px;
+  padding: 3px;
+}
+
+.StatusCapsule-1 {
+  background-color: #009C63;
+}
+
+.StatusCapsule-2 {
+  background-color: #504CC9;
+}
+
+.Statuslabel {
+  padding: 5px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.StatusCapsule-3 {
+  background: chocolate;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.NameUserCard {
+
+  padding: 10px;
+  padding-top: 0px;
+}
+
+.ThemeCard {
+  padding: 10px;
+  padding-top: 0px;
+}
+
+.form {
+  background-color: white;
+  height: 926px;
+}
+
+.greeting {
+  background: linear-gradient(130.36deg, #47D69D 0%, #47D69D 0.01%, #009966 100%);
+
+  color: rgba(255, 255, 255, 1);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: auto;
+  padding: 20px 10px;
+  padding-right: 0;
+}
+
+.tab {
+  background-color: #ffffff5e;
+  padding: 3px 12px;
+  cursor: pointer;
+  color: white;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.tab.active {
+  background-color: white;
+  color: #000;
+}
+
+.tabs-container {
+  font-weight: 600;
+  line-height: 24px;
+  font-size: 16px;
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-left: 10px;
+  width: 97vw;
+  padding-top: 10px;
+  margin-right: auto;
+}
+
+.tab:last-child {
+  margin-right: 0;
+}
+
+.chat-element,
+.tabs-container::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.chat-element {
+  display: flex;
+  flex-direction: column;
+  /* height: 200px; */
+  width: 100%;
+  overflow-y: scroll;
+  background-color: white;
+}
+
+.User {
+  margin-left: auto;
+  background-color: rgba(35, 183, 129, 1);
+  margin-right: 10px;
+}
+
+.Operator {
+  margin-right: auto;
+  /* background-color: rgb(128, 131, 131); */
+  background: #ededed;
+
+  margin-left: 10px;
+}
+
+.UsMessageTime {
+  color: #FFFFFF;
+}
+
+.OpMessageTime {
+  color: #919192;
+}
+
+.User,
+.Operator {
+  font-weight: 600;
+  line-height: 24px;
+  font-size: 16px;
+  border-radius: 16px;
+  margin-top: 10px;
+  padding: 6px;
+  max-width: 80%;
+}
+
+.OpMessageTime,
+.UsMessageTime {
+  font-size: 10px;
+}
+
+.UserTextMessage {
+  margin-right: auto;
+  color: #e4e4e4;
+}
+
+.UserMessage {
+  display: none;
+}
+
+.lolSvg {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.OpSvg,
+.UsSvg {
+  padding: 0;
+  margin: 0;
+  width: 0;
+  height: 0;
+}
+
+.Operator,
+.User {
+  position: relative;
+}
+
+.OpSvg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 67px;
+  left: -5px;
+}
+
+.UsSvg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: 43px;
+  right: 8px;
+}
+
+.card-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  background-color: white;
+}
+
+.OperatorMessage,
+.OperatorMessage1 {
+  color: #009C63;
+}
+
+.UserMessage1 {
+  color: #ededed;
+}
+
+.button-container {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 999;
+}
+
+.button-container button {
+  width: 95%;
+  height: 50px;
+  border-radius: 16px;
+  border: 0px;
+  background-color: #009966;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+.button-container button:hover {
+  background-color: #00754e;
+}
+
+.button-container button:disabled {
+  width: 95%;
+  height: 50px;
+  border-radius: 16px;
+  border: 0px;
+  background-color: #919192;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.toggle {
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #ccc;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.toggle.active {
+  background-color: #6cd963;
+}
+
+.toggle:before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2px;
+  transition: left 0.3s ease;
+}
+
+.toggle.active:before {
+  left: calc(100% - 20px);
+}
+
+.toggle-text {
+  margin-left: 10px;
+}
+
+.labelTabs1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.Label-ListApplicationOperator1 {
+  background: linear-gradient(90.36deg, #47D69D 0%, #47D69D 0.01%, #47D69D 0%);
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 10px;
+}
+
+.button-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  position: relative;
+  align-items: center;
+  padding: 10px 0px;
+  /* width: 93%; */
+}
+
+.buttonEl {
+  background-color: #009c63;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  height: 40px;
+  letter-spacing: .03em;
+  line-height: 20px;
+  margin-bottom: 15px;
+  margin-right: 1px;
+  text-align: center;
+  width: 93%;
+}
+
+.buttonPhoto {
+  border: none;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  margin: 0;
+  padding: 0;
+  /* border-radius: 10px; */
+  /* background-color: darkgrey; */
+  /* font-size: 14px; */
+  font-weight: 700;
+  border-bottom: 1px solid black;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.loading-spinner {
+  color: #009966;
+}
+
+
+
+.SearchUser {
+  margin-bottom: 10px;
+  width: 90%;
+  border: none;
+  /* background: linear-gradient(90.36deg, #47d69d, #47d69d .01%, #096); */
+  color: black;
+  border-bottom: 1px solid black;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.SearchUser::placeholder {
+  color: black;
+}
+
+.SearchUser:focus {
+  outline: none;
+}
+
+.form-filling1 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  /* height: 0; */
+  min-height: 800px;
+  /* padding-top: 10px; */
+}
+
+.applic {
+  align-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #dae5e8;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 0 #00000014;
+  box-shadow: 0 8px 16px 0 #000c;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: auto;
+  margin-bottom: 1px;
+  margin-bottom: 15px;
+  width: 93%;
+}
+
+.applic-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 96%;
 }
