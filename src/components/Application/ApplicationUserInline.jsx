@@ -7,6 +7,7 @@ import ChatElementUser from '../UI/ChatElementUser';
 import { ButtonsApplicationUserInline } from '../UI/Buttons'
 import CircularProgress from '@mui/material/CircularProgress';
 
+
 const ApplicationUserInline = () => {
     const [dataArray, setDataArray] = useState({});
     const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +16,7 @@ const ApplicationUserInline = () => {
     const [chatMessages, setChatMessages] = useState([]);
     const operatorId = tg.initDataUnsafe.user.id;
     const queryId = tg.initDataUnsafe?.query_id;
-
+    
     useEffect(() => {
         const fetchData = async () => {
             const data = await GETApplication(id);

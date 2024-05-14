@@ -6,11 +6,13 @@ import GETChat from '../hooks/GETChat';
 import ChatElementUser from '../UI/ChatElementUser';
 import { ButtonsApplicationUser } from '../UI/Buttons'
 import CircularProgress from '@mui/material/CircularProgress';
+import { useNavigate } from 'react-router-dom';
 
 const ApplicationUser = () => {
     const [dataArray, setDataArray] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const { id } = useParams();
+    const navigate = useNavigate();
     const tg = window.Telegram.WebApp;
     const [chatMessages, setChatMessages] = useState([]);
 
@@ -27,6 +29,21 @@ const ApplicationUser = () => {
 
     }, [id]);
 
+    useEffect(() => {
+        tg.BackButton.show();
+    }, [navigate, tg]);
+
+
+    useEffect(() => {
+        const handleBackButton = () => {
+            navigate(-1);
+        };
+        tg.BackButton.onClick(handleBackButton);
+        return () => {
+            tg.BackButton.offClick(handleBackButton);
+        };
+    }, [navigate, tg.BackButton]);
+    
     const sendPhotoChat = useCallback((id) => {
         tg.sendData(`/handleShowPhoto ${id}`);
         tg.close();

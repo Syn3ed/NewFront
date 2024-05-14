@@ -90,6 +90,7 @@ export const ButtonsApplicationOperator = ({ status, id }) => {
 };
 
 export const ButtonsApplicationUserInline = ({ dataArray, id, status }) => {
+
     const onSendPhoto = useCallback(() => {
         const data = {
             userRequestId: dataArray.userRequestId,

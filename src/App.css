@@ -160,7 +160,7 @@
   overflow-x: auto;
   white-space: nowrap;
   padding-left: 10px;
-  width: 97vw;
+  /* width: 97vw; */
   padding-top: 10px;
   margin-right: auto;
 }
