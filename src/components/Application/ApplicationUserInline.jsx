@@ -31,8 +31,8 @@ const ApplicationUserInline = () => {
     const handleShowPhoto = (idMedia) => {
         console.log(idMedia);
         const data = {
-            userRequestId: dataArray[0].userRequestId,
-            username: dataArray[0].username,
+            userRequestId: dataArray.userRequestId,
+            username: dataArray.username,
             queryId,
             idMedia,
             operatorId,
