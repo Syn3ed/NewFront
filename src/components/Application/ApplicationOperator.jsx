@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import CustomTextInput from '../UI/CustomTextInput';
 import GETApplication from '../hooks/GETApplication';
 import { useParams } from 'react-router-dom';
@@ -7,9 +7,11 @@ import ChatElementOperator from '../UI/ChatElementOperator';
 import { ButtonsApplicationOperator } from '../UI/Buttons'
 import CircularProgress from '@mui/material/CircularProgress';
 
+
 const ApplicationOperator = () => {
     const [dataArray, setDataArray] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const tg = window.Telegram.WebApp;
     const { id } = useParams();
     const [chatMessages, setChatMessages] = useState([]);
     useEffect(() => {
@@ -24,6 +26,11 @@ const ApplicationOperator = () => {
         fetchData();
 
     }, [id]);
+
+    const sendPhotoChat = useCallback((id) => {
+        tg.sendData(`/handleShowPhoto ${id}`);
+        tg.close();
+    }, [tg])
 
     if (isLoading) {
         return (
@@ -50,7 +57,7 @@ const ApplicationOperator = () => {
                 <CustomTextInput label="Описание" text={dataArray.description} />
             </div>
 
-            <ChatElementOperator message={chatMessages} />
+            <ChatElementOperator message={chatMessages} handlePhoto={sendPhotoChat}/>
             <ButtonsApplicationOperator id={id} status={dataArray.status} />
         </div>
     );

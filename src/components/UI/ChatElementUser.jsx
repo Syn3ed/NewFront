@@ -1,6 +1,8 @@
 import React from 'react';
 
-const ChatElementUser = ({ message }) => {
+const ChatElementUser = ({ message, handlePhoto }) => {
+
+
     return (
         <div className="chat-element">
             {message.map((message, index) => (
@@ -10,7 +12,7 @@ const ChatElementUser = ({ message }) => {
                     </div>
                     <div className={message.roleUser === 'User' ? 'UserTextMessage' : 'OperatorTextMessage'}> {message.textMessage}</div>
                     {message.IdMedia && (
-                        <button className='buttonPhoto' >
+                        <button className='buttonPhoto' onClick={() => handlePhoto(message.IdMedia)} >
                             Показать файл
                         </button>
                     )}

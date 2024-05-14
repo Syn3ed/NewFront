@@ -10,8 +10,11 @@ import CircularProgress from '@mui/material/CircularProgress';
 const ApplicationOperatorInline = () => {
     const [dataArray, setDataArray] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const tg = window.Telegram.WebApp;
     const { id } = useParams();
     const [chatMessages, setChatMessages] = useState([]);
+    const operatorId = tg.initDataUnsafe.user.id;
+    const queryId = tg.initDataUnsafe?.query_id;
     useEffect(() => {
         const fetchData = async () => {
             const data = await GETApplication(id);
@@ -33,7 +36,27 @@ const ApplicationOperatorInline = () => {
         )
 
     }
-
+    const handleShowPhoto = (idMedia) => {
+        console.log(idMedia);
+        const data = {
+            userRequestId: dataArray[0].userRequestId,
+            username: dataArray[0].username,
+            queryId,
+            idMedia,
+            operatorId,
+        }
+        fetch('https://www.tgbottp.ru/handleShowPhoto', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        }).then(response => {
+            tg.close();
+        }).catch(error => {
+            console.error('Ошибка при отправке запроса:', error);
+        });
+    };
     return (
         <div className='ListApplicationOperator'>
             <div className='Label-ListApplicationOperator1'>
@@ -50,7 +73,7 @@ const ApplicationOperatorInline = () => {
                 <CustomTextInput label="Описание" text={dataArray.description} />
             </div>
 
-            <ChatElementOperator message={chatMessages} />
+            <ChatElementOperator message={chatMessages} handlePhoto={handleShowPhoto} />
             <ButtonsApplicationOperatorInline id={id} status={dataArray.status} />
         </div>
     );

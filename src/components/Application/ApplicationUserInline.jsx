@@ -11,7 +11,10 @@ const ApplicationUserInline = () => {
     const [dataArray, setDataArray] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const { id } = useParams();
+    const tg = window.Telegram.WebApp;
     const [chatMessages, setChatMessages] = useState([]);
+    const operatorId = tg.initDataUnsafe.user.id;
+    const queryId = tg.initDataUnsafe?.query_id;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,6 +28,28 @@ const ApplicationUserInline = () => {
         fetchData();
 
     }, [id]);
+    const handleShowPhoto = (idMedia) => {
+        console.log(idMedia);
+        const data = {
+            userRequestId: dataArray[0].userRequestId,
+            username: dataArray[0].username,
+            queryId,
+            idMedia,
+            operatorId,
+        }
+        fetch('https://www.tgbottp.ru/handleShowPhoto', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        }).then(response => {
+            tg.close();
+        }).catch(error => {
+            console.error('Ошибка при отправке запроса:', error);
+        });
+    };
+
 
     if (isLoading) {
         return (
@@ -50,7 +75,7 @@ const ApplicationUserInline = () => {
                 <CustomTextInput label="Описание" text={dataArray.description} />
             </div>
 
-            <ChatElementUser message={chatMessages} />
+            <ChatElementUser message={chatMessages} handlePhoto={handleShowPhoto} />
             <ButtonsApplicationUserInline id={id} status={dataArray.status} />
         </div>
     );
