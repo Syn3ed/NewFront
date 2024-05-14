@@ -6,7 +6,9 @@ const Form = () => {
   const [text1, setText1] = useState("");
   const [text2, setText2] = useState("");
   const [text3, setText3] = useState("");
+  // const [isSwitchOn, setIsSwitchOn] = useState(false); 
   const [isFormFilled, setIsFormFilled] = useState(false);
+  const tg = window.Telegram.WebApp;
 
   const handleTextChange1 = (text) => {
     setText1(text);
@@ -30,6 +32,14 @@ const Form = () => {
 
   const handleSubmit = () => {
     console.log('Форма отправлена', text1, text2, text3);
+    const data = {
+      text1,
+      text2,
+      text3,
+      isSwitchOn: false
+  };
+  tg.sendData(JSON.stringify(data));
+  console.log('Отправка данных:', JSON.stringify(data));
   };
 
   return (
