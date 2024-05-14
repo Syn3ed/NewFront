@@ -106,7 +106,7 @@ export const ButtonsApplicationUserInline = ({ dataArray, id, status }) => {
             },
             body: JSON.stringify(data)
         }).then(response => {
-            // tg.close();
+            tg.close();
         }).catch(error => {
             console.error('Ошибка при отправке запроса:', error);
         });
@@ -125,7 +125,7 @@ export const ButtonsApplicationUserInline = ({ dataArray, id, status }) => {
             },
             body: JSON.stringify(data)
         }).then(response => {
-            // tg.close();
+            tg.close();
         }).catch(error => {
             console.error('Ошибка при отправке запроса:', error);
         });
@@ -145,7 +145,7 @@ export const ButtonsApplicationUserInline = ({ dataArray, id, status }) => {
             },
             body: JSON.stringify(data)
         }).then(response => {
-            // tg.close();
+            tg.close();
         }).catch(error => {
             console.error('Ошибка при отправке запроса:', error);
         });
@@ -191,7 +191,7 @@ export const ButtonsApplicationOperatorInline = ({ dataArray, id, status }) => {
             },
             body: JSON.stringify(data)
         }).then(response => {
-            // tg.close();
+            tg.close();
         }).catch(error => {
             console.error('Ошибка при отправке запроса:', error);
         });
@@ -210,7 +210,7 @@ export const ButtonsApplicationOperatorInline = ({ dataArray, id, status }) => {
             },
             body: JSON.stringify(data)
         }).then(response => {
-            // tg.close();
+            tg.close();
         }).catch(error => {
             console.error('Ошибка при отправке запроса:', error);
         });
@@ -230,7 +230,7 @@ export const ButtonsApplicationOperatorInline = ({ dataArray, id, status }) => {
             },
             body: JSON.stringify(data)
         }).then(response => {
-            // tg.close();
+            tg.close();
         }).catch(error => {
             console.error('Ошибка при отправке запроса:', error);
         });
