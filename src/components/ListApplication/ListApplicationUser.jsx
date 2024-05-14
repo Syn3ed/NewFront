@@ -11,7 +11,7 @@ const ListApplicationUser = () => {
     const [activeTab, setActiveTab] = useState('all');
     const [isLoading, setIsLoading] = useState(true);
     const { id } = useParams();
-
+    const tg = window.Telegram.WebApp;
     useEffect(() => {
         const fetchData = async () => {
             const data2 = await GETApplicationListUser(id);
@@ -23,7 +23,9 @@ const ListApplicationUser = () => {
         fetchData();
 
     }, [id]);
-
+    useEffect(() => {
+        tg.BackButton.hide();
+    }, [tg]);
     useEffect(() => {
         if (activeTab === 'all') {
             setFilteredApplication(application);
@@ -64,7 +66,7 @@ const ListApplicationUser = () => {
                 </label>
                 <CustomTabs changeTab={changeTab} />
             </div>
-            <CardApplications messages={filteredApplication} stat= 'User'/>
+            <CardApplications messages={filteredApplication} stat='User' />
         </div>
     );
 }

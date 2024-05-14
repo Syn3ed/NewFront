@@ -9,7 +9,7 @@ const ListApplicationOperator = () => {
     const [filteredApplication, setFilteredApplication] = useState([]);
     const [activeTab, setActiveTab] = useState('all');
     const [isLoading, setIsLoading] = useState(true);
-
+    const tg = window.Telegram.WebApp;
     useEffect(() => {
         const fetchData = async () => {
             const data2 = await GETApplicationList();
@@ -22,7 +22,9 @@ const ListApplicationOperator = () => {
 
     }, []);
 
-
+    useEffect(() => {
+        tg.BackButton.hide();
+    }, [ tg]);
     
     useEffect(() => {
         if (activeTab === 'all') {
