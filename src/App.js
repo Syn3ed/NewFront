@@ -26,7 +26,7 @@ const App = () => {
         <Route path="/Inlinerequests/:id" element={<ApplicationUserInline />} />
 
         <Route path="/InlinerequestsOperator/:id" element={<ApplicationOperatorInline />} />
-        <Route path="/menu" element={<Menu />} />
+        <Route path="/AdminIndex" element={<Menu />} />
         <Route path="/Profile/:id" element={<Profile />} />
 
         <Route path="/UserProfile/:id" element={<UserProfile />} />
