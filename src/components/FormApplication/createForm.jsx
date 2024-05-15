@@ -33,9 +33,9 @@ const Form = () => {
   const handleSubmit = () => {
     console.log('Форма отправлена', text1, text2, text3);
     const data = {
-      text1,
-      text2,
-      text3,
+      address:text1,
+      category:text2,
+      description:text3,
       isSwitchOn: false
   };
   tg.sendData(JSON.stringify(data));
