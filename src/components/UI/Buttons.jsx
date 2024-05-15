@@ -99,7 +99,7 @@ export const ButtonsApplicationUserInline = ({ dataArray, id, status }) => {
             operatorId: tg.initDataUnsafe.user.id
         };
 
-        fetch('https://www.tgbottp.ru/resToUserPhoto', {
+        fetch('https://www.tgbottp.ru/replyToOperatorPhoto', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -184,7 +184,7 @@ export const ButtonsApplicationOperatorInline = ({ dataArray, id, status }) => {
             operatorId: tg.initDataUnsafe.user.id
         };
 
-        fetch('https://www.tgbottp.ru/replyToOperatorPhoto', {
+        fetch('https://www.tgbottp.ru/resToUserPhoto', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
