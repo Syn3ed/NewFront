@@ -64,7 +64,7 @@ const ListApplicationOperator = () => {
                 <label className='labelTabs'>
                     Заявки
                 </label>
-                <CustomTabs changeTab={changeTab} />
+                <CustomTabs changeTab={changeTab} dataArray={application} />
             </div>
             <CardApplications messages={filteredApplication} stat='Operator' />
         </div>
