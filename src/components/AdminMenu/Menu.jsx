@@ -17,18 +17,9 @@ const FullList = () => {
 
     useEffect(() => {
         tg.MainButton.hide()
-        tg.BackButton.show()
+        // tg.BackButton.show()
     }, [tg])
 
-    useEffect(() => {
-        const handleBackButton = () => {
-            navigate(-1);
-        };
-        tg.BackButton.onClick(handleBackButton);
-        return () => {
-            tg.BackButton.offClick(handleBackButton);
-        };
-    }, [navigate, tg]);
 
     const roleMap = useMemo(() => ({
         1: 'Администратор',
