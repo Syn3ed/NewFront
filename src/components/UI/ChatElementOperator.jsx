@@ -8,17 +8,17 @@ const ChatElementOperator = ({ message, handlePhoto }) => {
 
             {/*Operator User  UserMessage OperatorMessage OperatorTextMessage UserTextMessage UsMessageTime OpMessageTime*/}
             {message.map((message, index) => (
-                <div key={index} className={message.roleUser === 'User' ? 'Operator' : 'User'}>
-                    <div className={message.roleUser === 'User' ? 'OperatorMessage1' : 'UserMessage1'}>
-                        {message.roleUser === 'User' ? message.username : message.username}
+                <div key={index} className={message.roleUser === 'User' ? 'User' : 'Operator'}>
+                    <div className={message.roleUser === 'User' ? 'UserMessage1' : 'OperatorMessage'}>
+                        {message.roleUser === 'User' ? message.username : message.username + '\n' + message.nicknameOperator}
                     </div>
-                    <div className={message.roleUser === 'User' ? 'OperatorTextMessage' : 'UserTextMessage'}> {message.textMessage}</div>
+                    <div className={message.roleUser === 'User' ? 'UserTextMessage' : 'OperatorTextMessage'}> {message.textMessage}</div>
                     {message.IdMedia && (
                         <button className='buttonPhoto' onClick={() => handlePhoto(message.IdMedia)}>
                             Показать файл
                         </button>
                     )}
-                    <div className={message.roleUser === 'User' ? 'OpMessageTime' : 'UsMessageTime'}>{message.Time}</div>
+                    <div className={message.roleUser === 'User' ? 'UsMessageTime' : 'OpMessageTime'}>{message.Time}</div>
                 </div>
             ))}
         </div>
