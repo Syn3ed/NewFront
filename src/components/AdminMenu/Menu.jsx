@@ -20,7 +20,7 @@ export const Menu = () => {
 
     useEffect(() => {
         tg.MainButton.hide()
-        // tg.BackButton.show()
+        tg.BackButton.hide()
     }, [tg])
 
 
