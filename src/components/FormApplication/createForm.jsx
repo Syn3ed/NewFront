@@ -6,7 +6,7 @@ const Form = () => {
   const [text1, setText1] = useState("");
   const [text2, setText2] = useState("");
   const [text3, setText3] = useState("");
-  // const [isSwitchOn, setIsSwitchOn] = useState(false); 
+  const [isSwitchOn, setIsSwitchOn] = useState(false); 
   const [isFormFilled, setIsFormFilled] = useState(false);
   const tg = window.Telegram.WebApp;
 
@@ -33,13 +33,13 @@ const Form = () => {
   const handleSubmit = () => {
     console.log('Форма отправлена', text1, text2, text3);
     const data = {
-      address:text1,
-      category:text2,
-      description:text3,
-      isSwitchOn: false
-  };
-  tg.sendData(JSON.stringify(data));
-  console.log('Отправка данных:', JSON.stringify(data));
+      address: text1,
+      category: text2,
+      description: text3,
+      isSwitchOn: isSwitchOn
+    };
+    tg.sendData(JSON.stringify(data));
+    console.log('Отправка данных:', JSON.stringify(data));
   };
 
   return (
@@ -52,6 +52,18 @@ const Form = () => {
       <CustomTextArea label="Описание заявки" placeholder="Введите описание завки" onTextChange={handleTextChange3} />
       <div className="button-container">
         <button disabled={!isFormFilled} onClick={handleSubmit}>Отправить</button>
+      </div>
+      <div className="form-group">
+        <label htmlFor="switch" class="custom-label">Прикрепить к заявке файлы</label>
+        <label className="switch">
+          <input
+            type="checkbox"
+            id="switch"
+            checked={isSwitchOn}
+            onChange={() => setIsSwitchOn(!isSwitchOn)}
+          />
+          <span className="slider round"></span>
+        </label>
       </div>
     </div>
   );
