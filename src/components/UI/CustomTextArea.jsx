@@ -20,8 +20,8 @@ const CustomTextArea = (props) => {
                 multiline
                 variant="standard"
                 onChange={handleTextChange}
-                value={props.text}
-                defaultValue={props.text}
+                value={props.value}
+                defaultValue={props.value}
                 InputProps={{
                     disableUnderline: true,
                     style: {
