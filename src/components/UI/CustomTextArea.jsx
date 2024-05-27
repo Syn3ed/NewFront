@@ -6,6 +6,7 @@ const CustomTextArea = (props) => {
     const [text, setText] = useState("");
     const handleTextChange = (event) => {
         const newText = event.target.value;
+        console.log(text);
         setText(newText);
         props.onTextChange(newText);
     };
@@ -19,7 +20,8 @@ const CustomTextArea = (props) => {
                 multiline
                 variant="standard"
                 onChange={handleTextChange}
-                value={text}
+                value={props.text}
+                defaultValue={props.text}
                 InputProps={{
                     disableUnderline: true,
                     style: {
