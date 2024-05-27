@@ -47,7 +47,7 @@ const Form = () => {
       const data = {
         text: text
       };
-      const response = await fetch('your_server_endpoint', {
+      const response = await fetch('http://localhost:8000/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
