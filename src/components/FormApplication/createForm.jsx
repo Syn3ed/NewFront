@@ -56,6 +56,7 @@ const Form = () => {
       });
       const responseData = await response.json();
       console.log('Ответ от сервера:', responseData);
+      console.log('Ответ от сервера:', responseData.updatedTopic);
       if (responseData.updatedTopic) {
         setText2(responseData.updatedTopic); 
       }
