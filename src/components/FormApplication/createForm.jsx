@@ -81,9 +81,9 @@ const Form = () => {
       <div className='greeting'>
         <label>Здравствуйте!👋<br /> Чем мы можем вам помочь?</label>
       </div>
-      <CustomTextArea label="Адрес" placeholder="Введите адрес ПЗУ" onTextChange={handleTextChange1} />
-      <CustomTextArea label="Тема заявки" placeholder="Введите тему заявки" text={text2} onTextChange={handleTextChange2}  defaultValue={text2} />
-      <CustomTextArea label="Описание заявки" placeholder="Введите описание завки" onTextChange={handleTextChange3} />
+      <CustomTextArea label="Адрес" placeholder="Введите адрес ПЗУ" text={text1} onTextChange={handleTextChange1} />
+      <CustomTextArea label="Описание заявки" placeholder="Введите описание завки" text={text3} onTextChange={handleTextChange3} />
+      <CustomTextArea label="Тема заявки" placeholder="Введите тему заявки" text={text2} onTextChange={handleTextChange2} />
       <div className="button-container">
         <button disabled={!isFormFilled} onClick={handleSubmit}>Отправить</button>
       </div>

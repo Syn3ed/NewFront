@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 
 const CustomTextArea = (props) => {
+    const [text, setText] = useState(props.text || "");
 
-    const [text, setText] = useState("");
+    useEffect(() => {
+        setText(props.text || "");
+    }, [props.text]);
+
     const handleTextChange = (event) => {
         const newText = event.target.value;
-        console.log(text);
         setText(newText);
         props.onTextChange(newText);
     };
@@ -20,8 +23,7 @@ const CustomTextArea = (props) => {
                 multiline
                 variant="standard"
                 onChange={handleTextChange}
-                value={props.text}
-                defaultValue={props.text}
+                value={text}
                 InputProps={{
                     disableUnderline: true,
                     style: {
@@ -51,10 +53,9 @@ const CustomTextArea = (props) => {
                         font: 'Onest'
                     }
                 }}
-
             />
         </div>
-    )
+    );
 }
-export default CustomTextArea;
 
+export default CustomTextArea;
