@@ -56,9 +56,9 @@ const Form = () => {
       });
       const responseData = await response.json();
       console.log('Ответ от сервера:', responseData);
-      console.log('Ответ от сервера:', responseData.updatedTopic);
-      if (responseData.updatedTopic) {
-        setText2(responseData.updatedTopic); 
+      console.log('Ответ от сервера:', responseData.category);
+      if (responseData.category) {
+        setText2(responseData.category); 
       }
     } catch (error) {
       console.error('Ошибка отправки данных на сервер:', error);
