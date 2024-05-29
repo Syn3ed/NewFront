@@ -7,7 +7,7 @@ const Form = () => {
   const [text3, setText3] = useState("");
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const [isFormFilled, setIsFormFilled] = useState(false);
-  const [isTyping, setIsTyping] = useState(false); // Состояние для отслеживания активности в поле описания
+  const [isTyping, setIsTyping] = useState(false); 
   const tg = window.Telegram.WebApp;
 
   const handleTextChange1 = (text) => {
@@ -37,10 +37,10 @@ const Form = () => {
       timeoutId = setTimeout(() => {
         sendDescriptionToServer(text3);
         setIsTyping(false) 
-      }, 5000); // Можно настроить нужный вам интервал ожидания
+      }, 5000);
     }
-    return () => clearTimeout(timeoutId); // Очищаем таймер при каждом обновлении
-  }, [text3, isTyping]); // Запускаем эффект только при изменении текста в поле описания или состояния isTyping
+    return () => clearTimeout(timeoutId); 
+  }, [text3, isTyping]); 
 
   const sendDescriptionToServer = async (text) => {
     try {

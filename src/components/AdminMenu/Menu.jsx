@@ -54,6 +54,7 @@ export const Menu = () => {
     useEffect(() => {
         if (activeTab === 'all') {
             setFilteredDataArray(dataArray);
+            setFilteredApplication(dataArray)
         } else {
             const filteredList = dataArray.filter(item => item.RoleId === getStatusFromTab(activeTab));
             setFilteredApplication(filteredList)
