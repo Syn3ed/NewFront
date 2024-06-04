@@ -42,7 +42,7 @@ const ListApplicationOperator = () => {
     const getStatusFromTab = (tab) => {
         const statusMap = {
             all: null,
-            pending: 'ожидает ответа оператора',
+            pending: 'Ожидает ответа оператора',
             processing: 'Заявка в обработке',
             closed: 'Заявка закрыта'
         };

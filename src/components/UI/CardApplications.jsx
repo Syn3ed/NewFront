@@ -4,7 +4,7 @@ const CardApplications = ({ messages, stat }) => {
     const statusMap = {
         'Заявка закрыта': 1,
         'Заявка в обработке': 2,
-        'ожидает ответа оператора': 3
+        'Ожидает ответа оператора': 3
     };
 
     const handleRowClick = (id) => {

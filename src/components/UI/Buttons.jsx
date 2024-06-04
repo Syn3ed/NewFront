@@ -21,7 +21,7 @@ export const ButtonsApplicationUser = ({ status, id }) => {
     let buttons = null;
 
     switch (status) {
-        case 'ожидает ответа оператора':
+        case 'Ожидает ответа оператора':
         case 'Заявка в обработке':
             buttons = (
                 <div className='button-list'>
@@ -61,7 +61,7 @@ export const ButtonsApplicationOperator = ({ status, id }) => {
     let buttons = null;
 
     switch (status) {
-        case 'ожидает ответа оператора':
+        case 'Ожидает ответа оператора':
             buttons = (
                 <div className='button-list'>
                     <button type="button" className='buttonEl' onClick={closeReq}>Закрыть заявку</button>
@@ -154,7 +154,7 @@ export const ButtonsApplicationUserInline = ({ dataArray, id, status }) => {
     let buttons = null;
 
     switch (status) {
-        case 'ожидает ответа оператора':
+        case 'Ожидает ответа оператора':
         case 'Заявка в обработке':
             buttons = (
                 <div className='button-list'>
@@ -239,7 +239,7 @@ export const ButtonsApplicationOperatorInline = ({ dataArray, id, status }) => {
     let buttons = null;
 
     switch (status) {
-        case 'ожидает ответа оператора':
+        case 'Ожидает ответа оператора':
             buttons = (
                 <div className='button-list'>
                     <button type="button" className='buttonEl' onClick={closeReq}>Закрыть заявку</button>
