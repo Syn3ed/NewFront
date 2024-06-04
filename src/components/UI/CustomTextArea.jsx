@@ -4,14 +4,20 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 const CustomTextArea = (props) => {
     const [text, setText] = useState(props.text || "");
+    const [remainingChars, setRemainingChars] = useState(props.maxLength);
 
     useEffect(() => {
         setText(props.text || "");
-    }, [props.text]);
+        setRemainingChars(props.maxLength - (props.text ? props.text.length : 0));
+    }, [props.text, props.maxLength]);
 
     const handleTextChange = (event, value) => {
         const newText = value !== undefined ? value : event.target.value;
+        if (props.maxLength && newText.length > props.maxLength) {
+            return;
+        }
         setText(newText);
+        setRemainingChars(props.maxLength - newText.length);
         props.onTextChange(newText);
     };
 
@@ -27,8 +33,9 @@ const CustomTextArea = (props) => {
                 <Autocomplete
                     options={props.options}
                     inputValue={text}
-                    onInputChange={handleTextChange}
+                    onInputChange={(event, value) => handleTextChange(event, value)}
                     renderOption={renderOption}
+                    freeSolo
                     renderInput={(params) => (
                         <TextField
                             {...params}
@@ -78,6 +85,9 @@ const CustomTextArea = (props) => {
                     variant="standard"
                     onChange={handleTextChange}
                     value={text}
+                    inputProps={{
+                        maxLength: props.maxLength,
+                    }}
                     InputProps={{
                         disableUnderline: true,
                         style: {
@@ -109,9 +119,13 @@ const CustomTextArea = (props) => {
                     }}
                 />
             )}
+            {props.maxLength && (
+                <div style={{ textAlign: 'right', fontSize: '12px', color: '#637175' }}>
+                    Осталось символов: {remainingChars}
+                </div>
+            )}
         </div>
     );
 }
 
 export default CustomTextArea;
-
