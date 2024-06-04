@@ -8,7 +8,7 @@ const CustomTabs = ({ initialActiveTab, changeTab, dataArray }) => {
 
     useEffect(() => {
         const inProgress = dataArray.filter(item => ((item.status === 'Заявка в обработке'))).length;
-        const awaitingOperator = dataArray.filter(item => item.status === 'ожидает ответа оператора').length;
+        const awaitingOperator = dataArray.filter(item => item.status === 'Ожидает ответа оператора').length;
         const closed = dataArray.filter(item => ((item.status === 'Заявка закрыта'))).length;
 
 
